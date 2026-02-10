@@ -18,12 +18,11 @@ leading to a long-term compromise that can go unnoticed for an extended period.
 
 #### 🌴 How to detect SQL injection vulnerabilities:- 
 SQL injection are detectable using a systematic set of tests against every entry point in the application. 
-i) The single quote character ' and look for errors or other anomalies.
-ii) Some SQL-specific syntax that evaluates to the base (original) value of the entry point, and to a different value, and look for systematic differences 
-    in the application responses.
-iii) Boolean conditions such as OR 1=1 and OR 1=2, and look for differences in the application's responses.
-iv) Payloads designed to trigger time delays when executed within a SQL query, and look for differences in the time taken to respond.
-v) OAST payloads designed to trigger an out-of-band network interaction when executed within a SQL query, and monitor any resulting interactions.
+- The single quote character ' and look for errors or other anomalies.
+- Some SQL-specific syntax that evaluates to the base (original) value of the entry point, and to a different      value, and look for systematic differences in the application responses.
+- Boolean conditions such as OR 1=1 and OR 1=2, and look for differences in the application's responses.
+- Payloads designed to trigger time delays when executed within a SQL query, and look for differences in the time taken to respond.
+- [OAST payloads](https://portswigger.net/burp/application-security-testing/oast) designed to trigger an out-of-band network interaction when executed within a SQL query, and monitor any resulting interactions.
 
 
 #### 🌴 SQL injection in different parts of the query:- 

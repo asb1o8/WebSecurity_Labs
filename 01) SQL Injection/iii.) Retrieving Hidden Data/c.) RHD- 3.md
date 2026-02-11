@@ -9,6 +9,7 @@
 - To solve the lab, perform a SQLi attack that causes the application to display one or more unreleased products.
 
 
+
 [Access the Lab](https://portswigger.net/web-security/learning-paths/sql-injection/sql-injection-retrieving-hidden-data/sql-injection/lab-retrieve-hidden-data#)
 
 

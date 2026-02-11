@@ -1,28 +1,9 @@
 
 #### 🌴 SQL Injection:-
-SQL injection (SQLi) is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. 
+- SQL injection (SQLi) is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. 
 This can allow an attacker to view data that they are not normally able to retrieve.
 
+- This might include data that belongs to other users, or any other data that the application can access. In many cases, an attacker can modify or delete this data, causing persistent changes to the application's content or behavior.
 
-#### 🌴 Impact of a successful SQL injection ?
+- In some situations, an attacker can escalate a SQL injection attack to compromise the underlying server or other back-end infrastructure. It can also enable them to perform denial-of-service attacks.
 
-A successful injection can result in unauthorized access to sensitive data, such as:
-
-    - Passwords.
-    - Credit card details.
-    - Personal user information.
-
-These have caused reputational damage and regulatory fines. In some cases, an attacker can obtain a persistent backdoor into an organization's systems, 
-leading to a long-term compromise that can go unnoticed for an extended period.
-
-
-#### 🌴 How to detect SQL injection vulnerabilities:- 
-SQL injection are detectable using a systematic set of tests against every entry point in the application. 
-- The single quote character ' and look for errors or other anomalies.
-- Some SQL-specific syntax that evaluates to the base (original) value of the entry point, and to a different      value, and look for systematic differences in the application responses.
-- Boolean conditions such as OR 1=1 and OR 1=2, and look for differences in the application's responses.
-- Payloads designed to trigger time delays when executed within a SQL query, and look for differences in the time taken to respond.
-- [OAST payloads](https://portswigger.net/burp/application-security-testing/oast) designed to trigger an out-of-band network interaction when executed within a SQL query, and monitor any resulting interactions.
-
-
-#### 🌴 SQL injection in different parts of the query:- 

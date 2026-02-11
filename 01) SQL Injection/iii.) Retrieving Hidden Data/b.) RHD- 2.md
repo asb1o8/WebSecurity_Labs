@@ -10,7 +10,7 @@ This results in the SQL query:
     SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
 
 
-- Crucially, note that `GET`-- is a comment indicator in SQL. This means that the rest of the query is
+- Crucially, note that `--` is a comment indicator in SQL. This means that the rest of the query is
   interpreted as a comment, effectively removing it. In this example, this means the query no longer includes
   AND `released = 1` . As a result, all products are displayed, including those that are not yet released.
 

@@ -24,13 +24,14 @@
 
 
 
-##### 🎋 Terms Explained:-
+🎋 `Terms Explained` :-
+-
 1) `If the injection point is a quoted string`
    - Quoted Strings are values wrapped in `'single quotes'` or `"double quotes"`
 
          SELECT * FROM users WHERE username = 'Alice' OR '1'='1';
 
-2.) `This series of payloads modifies the original query to order the results by different columns in the result set.` 
+2) `This series of payloads modifies the original query to order the results by different columns in the result set.` 
 
   - Normally, a SQL query might look like:
 
@@ -39,11 +40,41 @@
 - Attackers can inject extra SQL code into the query. In this case, the payloads are designed to modify the
   query’s ORDER BY clause.
 
-3.) `Issuing a Generic Response Error` means:-
+3) `Issuing a Generic Response Error` means:-
   - It is a vague, user-friendly message that doesn’t reveal sensitive technical details.
   - Returning the actual database error: e.g., “SQL syntax error near ‘FROM’”. This reveals technical about what                                          went wrong.
   - Issue a generic error response: e.g., “Something went wrong. Please try again later.”
 
 
-4.) `Inferring the Columns being Returned from a Query` means:-
-  - 
+4) `Inferring the Columns being Returned from a Query` means:-
+  - In the context of SQLi or query testing, attackers often try to figure out how many columns a query is returning.
+  - They do this by *sending crafted inputs and observing differences in the application’s responses*
+  - If the *query expects 3 columns but you force it to return 4, the application might throw an error or behave     differently*.
+  - By gradually adjusting and watching the response, you can infer(no. of columns the DB would present) the number of columns in the query.
+  - This matters because knowing the column count helps attackers align their injected data with the query structure, making exploitation possible.
+
+5) `Common DB Errors that leak info` are as:-
+
+  - Syntax Errors:
+      - Example: “You have an error in your SQL syntax near ‘FROM users’”.
+      - Clue: Reveals the type of database (MySQL, PostgreSQL, Oracle, etc.) and sometimes the exact query fragment.
+
+  - Column/Field Errors:
+       - Example: “Unknown column ‘email_address’ in ‘field list’”.
+       - Clue: Exposes actual column names in the database schema.
+
+  - Table Errors:
+       - Example: “Table ‘customers’ doesn’t exist”.
+       - Clue: Reveals table names and structure.
+
+  - Type Mismatch Errors:
+       - Example: “Conversion failed when converting varchar to int”.
+       - Clue: Indicates the data type of a column, helping attackers craft more precise injections.
+
+  - Constraint/Key Errors:
+       - Example: “Duplicate entry ‘123’ for key ‘PRIMARY’”.
+       - Clue: Shows which columns are unique or primary keys.
+
+  - Driver/Connection Errors:
+       - Example: “ODBC driver error” or “ORA-00933: SQL command not properly ended”.
+       - Clue: Reveals the database engine or driver in use.

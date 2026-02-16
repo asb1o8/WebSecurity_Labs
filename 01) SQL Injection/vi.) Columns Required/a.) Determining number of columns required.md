@@ -38,3 +38,12 @@
     
 - Attackers can inject extra SQL code into the query. In this case, the payloads are designed to modify the
   query’s ORDER BY clause.
+
+3.) `Issuing a Generic Response Error` means:-
+  - It is a vague, user-friendly message that doesn’t reveal sensitive technical details.
+  - Returning the actual database error: e.g., “SQL syntax error near ‘FROM’”. This reveals technical about what                                          went wrong.
+  - Issue a generic error response: e.g., “Something went wrong. Please try again later.”
+
+
+4.) `Inferring the Columns being Returned from a Query` means:-
+  - 

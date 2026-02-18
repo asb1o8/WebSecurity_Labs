@@ -33,12 +33,11 @@ For more details of database-specific syntax, see the [SQL injection cheat sheet
          ' UNION SELECT NULL -- valid
          ' UNION SELECT NULL-- invalid (no space after --)
 
-   - In MySQL it # is a comment marker. Means attacker # use this to ignore the remaining query
+   - In MySQL it `#` is a comment marker. Means attacker use this to ignore the remaining query
 
          ' UNION SELECT NULL# rest ignored
 
-    - To ensure the remainig part of the original query don't execute while injecting payload, then attacker use it. Jab attacker payload inject karta hai, usko ensure karna hota hai ki original query ka baaki hissa execute na ho.
+    - To ensure the remaining part of the original query don't execute while injecting payload, then attacker  use it. When an attacker injects the payload, he ensures that the original part of the query doesn’t execute.
+If remaining part of the query executed then syntax error will be occur. 
 
-Agar baaki query execute ho jaaye to syntax error aa sakta hai.
-
-Isliye -- (with space) ya # use karke attacker query ko cleanly terminate karta hai.
+    - Attackers often need to end the legitimate query so that only their injected part runs. `-- (double dash followed by a space)` or `#` are comment symbols in SQL.

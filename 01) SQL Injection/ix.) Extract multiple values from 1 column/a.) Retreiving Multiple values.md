@@ -18,14 +18,14 @@
       ...
 
 Different databases use different syntax to perform string concatenation. For more details, see the 
-(SQL injection cheat sheet)[https://portswigger.net/web-security/sql-injection/cheat-sheet]
+[SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 
 
 
 🎋 `Deeply Explained:`
 -
 - `In some cases.......return a single column.`  
-👉 Query sometimes serve the data of a column, like "username" or "password".
+ Query sometimes serve the data of a column, like "username" or "password".
 
  
 - `Example: Oracle database mein tum likh sakte ho`

@@ -1,7 +1,7 @@
 ## ⛳ Retrieving multiple values within a single column
 
 - In some cases the query in the previous example may only return a single column.
-- You can retrieve multiple values together within this single column by concatenating the values together.
+- You can retrieve multiple values collectively in single column by concatenating the values together.
   You can include a separator to let you distinguish the combined values. For example, on Oracle you could
   submit the input:
 
@@ -19,3 +19,15 @@
 
 Different databases use different syntax to perform string concatenation. For more details, see the 
 (SQL injection cheat sheet)[https://portswigger.net/web-security/sql-injection/cheat-sheet]
+
+
+
+🎋 `Deeply Explained:`
+-
+- `In some cases.......return a single column.`  
+👉 Query sometimes serve the data of a column, like "username" or "password".
+
+ 
+- `Example: Oracle database mein tum likh sakte ho`
+
+      ' UNION SELECT username || '~' || password FROM users

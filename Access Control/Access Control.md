@@ -47,4 +47,6 @@ Depending on the weakness, broken access control may allow an attacker to:
 - Escalate privileges.
 - Access restricted application functionality.
 
+    ![Earlier Intercepted Request](https://github.com/asb1o8/WebSecurity_Labs/blob/main/Access%20Control/Img/Access%20Control.png)
+
 **Key Takeaway:** Authentication establishes who the user is, session management maintains their identity across requests, and access control determines what they are allowed to do.
